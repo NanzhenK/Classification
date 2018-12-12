@@ -75,7 +75,7 @@ public class TextClassifierDL4j {
     }
 
     private static void word2vec_test() throws Exception{
-        Word2Vec w2v = WordVectorSerializer.readWord2VecModel(new File(w2v_model)); //可以用gensim训练的模型
+        Word2Vec w2v = WordVectorSerializer.readWord2VecModel(new File(w2v_model)); 
         System.out.println("xiaomi Closest Words:");
         Collection<String> lst = w2v.wordsNearest(PrepareData.preProcess_keyword("xiaomi"), 5);
         System.out.println(lst);
