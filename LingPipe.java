@@ -1,5 +1,3 @@
-package nlp.banggood.classify;
-
 import com.aliasi.classify.*;
 import com.aliasi.classify.NaiveBayesClassifier;
 import com.aliasi.lm.TokenizedLM;
