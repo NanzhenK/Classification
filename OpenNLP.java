@@ -9,7 +9,7 @@ import java.io.*;
 import java.util.*;
 import java.util.stream.Collectors;
 
-public class KeywordClassifierOpenNLP {
+public class OpenNLP {
 
     private static void train(){
         try {
