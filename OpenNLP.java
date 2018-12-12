@@ -121,7 +121,7 @@ public class KeywordClassifierOpenNLP {
         ObjectStream<String> lineStream = new PlainTextByLineStream(isf, "UTF-8");
         ObjectStream<DocumentSample> sampleStream = new DocumentSampleStream(lineStream);
 
-//        InputStream is = new FileInputStream("model"+File.separator+"model_name.bin");
+        InputStream is = new FileInputStream("model"+File.separator+"model_name.bin");
         DoccatModel model = new DoccatModel(is);
         DocumentCategorizer doccat = new DocumentCategorizerME(model);
 
