@@ -13,7 +13,7 @@ import java.util.*;
 import java.util.regex.Pattern;
 import java.util.stream.Collectors;
 
-public class LanguageClassifierLingPipe {
+public class LingPipe {
 
     private static String[] cat_train={"t1", "t2"};
 
@@ -67,8 +67,7 @@ public class LanguageClassifierLingPipe {
                     int[][] confusion_matrix = new int[2][2];
                     for (String lineTxt : title_list) {
                         String[] lt = lineTxt.split(",", 2);
-                        String title = PrepareData.preProcess_language(lt[1]);
-                        String category = classification.bestCategory(title); 
+                        String category = classification.bestCategory(lt[1]); 
 
                         if(category.equals(lt[0]) && lt[0].equals("t1")){
                             confusion_matrix[0][0]++;
@@ -133,7 +132,7 @@ public class LanguageClassifierLingPipe {
             String lineTxt;
             String[] lt;
             while ((lineTxt = bufferedReader.readLine()) != null) {
-                lt = lineTxt.split("\t", 2);
+                lt = lineTxt.split("\\t", 2);
                 Classification c = new Classification(lt[0]);
                 if (!StringUtils.isBlank(lt[1])) {
                     Classified<CharSequence> classified = new Classified<>(lt[1], c);
